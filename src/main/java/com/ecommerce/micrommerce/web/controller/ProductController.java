@@ -70,5 +70,10 @@ public class ProductController {
         return productDao.findAll().stream().collect(Collectors.toMap(product -> product, product -> product.getPrix()-product.getPrixAchat()));
     }
 
+    @GetMapping("/ProduitsOrderedByNom")
+    public List<Product> listeProduitsOrdreAlphabetique() {
+        return productDao.findAllByOrderByNom();
+    }
+
 
 }
