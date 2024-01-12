@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @PutMapping (value = "/Produits")
-    public void updateProduit(@RequestBody Product product) {
+    public void updateProduit(@Valid @RequestBody Product product) {
         if(product.getPrix()<1){
             throw new ProduitGratuitException("Le prix d'un produit ne peut être inférieur à 1.");
         }
